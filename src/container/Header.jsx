@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <div className="Header">
       <i className="Header-icon">O</i>
-      <p className="Header-text">Color palette generator</p>
+      <h1 className="Header-text">Color palette generator</h1>
     </div>
   );
 };

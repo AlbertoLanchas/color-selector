@@ -1,29 +1,39 @@
 import React, { useEffect, useState } from "react";
 import { CompactPicker } from "react-color";
+import Circle from "./Circle";
 import "../scss/Palette.scss";
 
 const Palette = () => {
-  const [color, setColor] = useState();
+  const [color, setColor] = useState({});
+  const [active, setActive] = useState("");
+
+  const { hex } = color;
   const handleChange = (color) => setColor(color);
 
+  const addColor = () => {
+    setActive(hex);
+  };
+
   useEffect(() => {
-    console.log(color);
-  }, [color]);
+    console.log("el value del hex", hex);
+    console.log("el value del active", active);
+    addColor();
+  }, [color, active]);
   return (
     <>
       <div className="Palette">
         <div className="Palette-circles">
-          <div className="Palette-circle" style={{ background: "blue" }}></div>
-          <div
+          {}
+          <input
+            type="button"
             className="Palette-circle"
-            style={{ background: "lightblue" }}
-          ></div>
-          <div
-            className="Palette-circle"
-            style={{ background: "burlywood" }}
-          ></div>
-          <div className="Palette-circle"></div>
-          <div className="Palette-circle"></div>
+            style={{ background: active }}
+            onFocus={() => addColor()}
+          />
+          <Circle style={{ background: active }} onFocus={() => addColor()} />
+          <Circle />
+          <Circle />
+          <Circle />
         </div>
         <div className="Palette-palette">
           <CompactPicker color={color} onChangeComplete={handleChange} />
