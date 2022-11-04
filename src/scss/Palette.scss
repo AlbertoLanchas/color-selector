@@ -1,0 +1,97 @@
+.Palette {
+  position: absolute;
+  display: inline;
+  width: 702px;
+  height: 262px;
+  left: 559px;
+  top: 154px;
+
+  &-circles {
+    position: relative;
+    width: 513.33px;
+    height: 88px;
+    left: 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &-circle {
+    cursor: pointer;
+    width: 73.33px;
+    height: 73.33px;
+    background: linear-gradient(
+      130.53deg,
+      #404040 17.47%,
+      #404040 27.71%,
+      #b0b0b0 27.72%,
+      #b0b0b0 36.75%,
+      #404040 36.76%,
+      #404040 45.49%,
+      #b0b0b0 45.5%,
+      #b0b0b0 54.23%,
+      #404040 54.24%,
+      #404040 63.27%,
+      #b0b0b0 63.27%,
+      #b0b0b0 71.71%,
+      #404040 71.71%
+    );
+    border: 3px solid #ffffff;
+    border-radius: 50%;
+    box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.15);
+    &:hover {
+      transform: scale(1.2);
+    }
+  }
+  &-palette {
+    background-color: white;
+    position: absolute;
+    width: 261px;
+    height: 97px;
+    top: 165px;
+    background: #ffffff;
+    box-shadow: 0px 0px 4px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 10px;
+    filter: drop-shadow(0px 4px 2px rgba(0, 0, 0, 0.15));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &-form {
+    position: absolute;
+    width: 353px;
+    height: 71px;
+    left: 349px;
+    top: 190px;
+    display: flex;
+    flex-direction: column;
+
+    &--text {
+      font-weight: 700;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    &--input {
+      color: white;
+      border: 4px solid #ffffff;
+      border-radius: 9px;
+    }
+    &--button {
+      background-color: white;
+      color: #2c2c2c;
+      width: 67px;
+      height: 42px;
+      border: 4px solid #ffffff;
+      border-radius: 9px;
+      font-weight: 200;
+      font-size: 55px;
+      line-height: 24px;
+    }
+  }
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}

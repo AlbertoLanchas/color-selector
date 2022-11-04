@@ -1,0 +1,26 @@
+.Header {
+  display: flex;
+  gap: 20px;
+
+  position: absolute;
+  width: 537px;
+  height: 54px;
+  left: 596px;
+  top: 34px;
+
+  &-icon {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
+
+  &-text {
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 54px;
+  }
+}
