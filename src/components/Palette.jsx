@@ -7,24 +7,24 @@ import "../scss/Palette.scss";
 const Palette = () => {
   const [color, setColor] = useState({});
   const [active, setActive] = useState("");
+  const [clicked, setClicked] = useState(0);
 
   const { hex } = color;
   const handleChange = (color) => setColor(color);
 
-  const addColor = (id, colour) => {
+  const addColor = (id) => {
     if (hex) {
       setActive(hex);
       circles[id].colour = hex;
+      setClicked(id);
     } else {
-      return;
+      setClicked(id);
     }
   };
 
   useEffect(() => {
-    console.log("hex", hex);
-    console.log("active", active);
-    console.log(circles[0].colour);
-  }, [color, active]);
+    addColor(clicked);
+  }, [color, active, hex]);
 
   return (
     <>
@@ -42,7 +42,7 @@ const Palette = () => {
                 <span
                   className="checkmark"
                   style={{ background: colour }}
-                  onClick={() => addColor(id, colour)}
+                  onClick={() => addColor(id)}
                 ></span>
               </label>
             );
