@@ -99,7 +99,7 @@
 
 // STYLES TO RADIO BUTTONS
 .custom-radio-btn {
-  --size: 35px;
+  --size: 73.33px;
   border-radius: 50%;
   cursor: pointer;
   position: relative;
@@ -115,17 +115,33 @@
 
 .custom-radio-btn .checkmark {
   --gap: 1px;
-  --border: 0.5px;
+  border: 4px solid white;
   --check-color: green;
-  width: var(--size);
-  height: var(--size);
+  width: 73.33px;
+  height: 73.33px;
   border-radius: 50%;
   position: absolute;
+  background: linear-gradient(
+    130.53deg,
+    #404040 17.47%,
+    #404040 27.71%,
+    #b0b0b0 27.72%,
+    #b0b0b0 36.75%,
+    #404040 36.76%,
+    #404040 45.49%,
+    #b0b0b0 45.5%,
+    #b0b0b0 54.23%,
+    #404040 54.24%,
+    #404040 63.27%,
+    #b0b0b0 63.27%,
+    #b0b0b0 71.71%,
+    #404040 71.71%
+  );
 }
 
 .custom-radio-btn input:checked ~ .checkmark {
-  border: 4px solid blue;
-  transform: scale(1.2);
+  border: 4px solid rgb(93, 216, 216);
+  transform: scale(1.3);
   background-origin: content-box;
   background-repeat: no-repeat;
   background-image: radial-gradient(
