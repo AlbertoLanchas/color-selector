@@ -14,10 +14,8 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
-  const [favs, setFavs] = useState([]);
 
-  const addToFavorites = () => {
-    setFavs(circles);
+  const addToFavorites = (circles) => {
     setFavorites([...favorites, { id: new Date(), circles }]);
   };
 
@@ -30,7 +28,6 @@ const AppContextProvider = ({ children }) => {
   return (
     <AppContext.Provider
       value={{
-        favs,
         favorites,
         addToFavorites,
         removeFromFavorites,

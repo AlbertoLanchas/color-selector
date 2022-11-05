@@ -13,8 +13,7 @@ const Palette = () => {
   const { hex } = color;
   const handleChange = (color) => setColor(color);
 
-  const { favs, favorites, addToFavorites, removeFromFavorites } =
-    useAppContext();
+  const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
 
   const addColor = (id) => {
     if (hex) {
@@ -71,7 +70,7 @@ const Palette = () => {
               /> */}
             <button
               className="Palette-form--button"
-              onClick={() => addToFavorites(circles)}
+              onClick={() => addToFavorites(favorites, circles)}
             >
               +
             </button>
