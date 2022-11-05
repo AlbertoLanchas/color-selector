@@ -19,48 +19,61 @@ const Palette = () => {
       setClicked(id);
     } else {
       setClicked(id);
+      circles[id].colour = "white";
     }
+  };
+
+  const addSaved = (e) => {
+    e.preventDefault();
   };
 
   useEffect(() => {
     addColor(clicked);
-  }, [color, active, hex]);
+  }, [hex]);
 
   return (
     <>
       <div className="Palette">
-        <div className="Palette-circles">
-          {circles.map(({ id, colour }) => {
-            return (
-              <label className="custom-radio-btn">
-                <input
-                  key={id}
-                  type="radio"
-                  name="buton"
-                  className="Palette-circle"
-                />
-                <span
-                  className="checkmark"
-                  style={{ background: colour }}
-                  onClick={() => addColor(id)}
-                ></span>
-              </label>
-            );
-          })}
-        </div>
-        <div className="Palette-palette">
-          <CompactPicker color={color} onChangeComplete={handleChange} />
-        </div>
-        <div className="Palette-form">
-          <p className="Palette-form--text">Name</p>
-          <div className="flex">
-            <input
-              className="Palette-form--input"
-              placeholder="Website color scheme"
-            />
-            <button className="Palette-form--button">+</button>
+        <form id="palette">
+          <div className="Palette-circles">
+            {circles.map(({ id, colour }) => {
+              return (
+                <label className="custom-radio-btn" key={id}>
+                  <input type="radio" name="buton" className="Palette-circle" />
+                  <span
+                    className="checkmark"
+                    style={{ background: colour }}
+                    onClick={() => addColor(id)}
+                  ></span>
+                </label>
+              );
+            })}
           </div>
-        </div>
+          <div className="Palette-palette">
+            <CompactPicker color={color} onChangeComplete={handleChange} />
+          </div>
+          <div className="Palette-form">
+            <p className="Palette-form--text">Name</p>
+            <div className="flex">
+              <input
+                className="Palette-form--input"
+                placeholder="Website color scheme"
+                required
+              />
+              <input
+                type="submit"
+                className="Palette-form--submit"
+                onSubmit={(e) => addSaved(e)}
+              />
+              <button
+                className="Palette-form--button"
+                onSubmit={(e) => addSaved(e)}
+              >
+                +
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
     </>
   );

@@ -140,7 +140,6 @@
 }
 
 .custom-radio-btn input:checked ~ .checkmark {
-  border: 4px solid rgb(93, 216, 216);
   transform: scale(1.3);
   background-origin: content-box;
   background-repeat: no-repeat;
@@ -150,4 +149,9 @@
       calc((var(--size) - (var(--border) * 2) - (var(--gap) * 2)) / 2),
     rgba(255, 255, 255, 0) 0
   );
+}
+
+input[type="submit"] {
+  opacity: 0;
+  display: none;
 }
