@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { CompactPicker } from "react-color";
-import Circle from "./Circle";
+import { circles } from "./data";
+
 import "../scss/Palette.scss";
 
 const Palette = () => {
@@ -10,30 +11,42 @@ const Palette = () => {
   const { hex } = color;
   const handleChange = (color) => setColor(color);
 
-  const addColor = () => {
-    setActive(hex);
+  const addColor = (id, colour) => {
+    if (hex) {
+      setActive(hex);
+      circles[id].colour = hex;
+    } else {
+      return;
+    }
   };
 
   useEffect(() => {
-    console.log("el value del hex", hex);
-    console.log("el value del active", active);
-    addColor();
+    console.log("hex", hex);
+    console.log("active", active);
+    console.log(circles[0].colour);
   }, [color, active]);
+
   return (
     <>
       <div className="Palette">
         <div className="Palette-circles">
-          {}
-          <input
-            type="button"
-            className="Palette-circle"
-            style={{ background: active }}
-            onFocus={() => addColor()}
-          />
-          <Circle style={{ background: active }} onFocus={() => addColor()} />
-          <Circle />
-          <Circle />
-          <Circle />
+          {circles.map(({ id, colour }) => {
+            return (
+              <label className="custom-radio-btn">
+                <input
+                  key={id}
+                  type="radio"
+                  name="buton"
+                  className="Palette-circle"
+                />
+                <span
+                  className="checkmark"
+                  style={{ background: colour }}
+                  onClick={() => addColor(id, colour)}
+                ></span>
+              </label>
+            );
+          })}
         </div>
         <div className="Palette-palette">
           <CompactPicker color={color} onChangeComplete={handleChange} />

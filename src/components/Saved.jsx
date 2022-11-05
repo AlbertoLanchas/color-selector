@@ -18,7 +18,7 @@ const Saved = () => {
             <div className="Item-circle"></div>
             <div className="Item-circle"></div>
           </div>
-        </div>{" "}
+        </div>
         <div className="Item">
           <div className="Item-header">
             <h3 className="Item-header--title">80s vibes</h3>

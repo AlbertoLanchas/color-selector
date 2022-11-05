@@ -1,7 +1,7 @@
 export const circles = [
-  { id: "1" },
-  { id: "2" },
-  { id: "3" },
-  { id: "4" },
-  { id: "5" },
+  { id: "0", colour: "red" },
+  { id: "1", colour: "red" },
+  { id: "2", colour: "red" },
+  { id: "3", colour: "red" },
+  { id: "4", colour: "red" },
 ];
