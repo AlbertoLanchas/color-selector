@@ -1,7 +1,7 @@
 .Saved {
   width: 67%;
-  margin-left: 12.5%;
   margin-top: 3vh;
+  margin-bottom: 2rem;
 
   &-title {
     display: inline-block;
@@ -58,4 +58,18 @@
 }
 
 @media screen and (max-width: 850px) {
+  .Saved {
+    width: 80%;
+    margin: 0;
+    &-grid {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  .Item {
+    &-background {
+      display: flex;
+      justify-content: space-evenly;
+    }
+  }
 }
