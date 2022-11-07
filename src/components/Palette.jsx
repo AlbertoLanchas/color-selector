@@ -13,7 +13,7 @@ const Palette = () => {
   const { hex } = color;
   const handleChange = (color) => setColor(color);
 
-  const { favorites, addToFavorites, removeFromFavorites } = useAppContext();
+  const { favorites, addToFavorites } = useAppContext();
 
   const addColor = (id) => {
     if (hex) {
@@ -32,8 +32,8 @@ const Palette = () => {
 
   useEffect(() => {
     addColor(clicked);
-    console.log(circles);
-  }, [hex, circles]);
+    console.log("el favorites desde el palette use effect", favorites);
+  }, [hex, circles, favorites]);
 
   return (
     <>
@@ -53,27 +53,29 @@ const Palette = () => {
             );
           })}
         </div>
-        <div className="Palette-palette">
-          <CompactPicker color={color} onChangeComplete={handleChange} />
-        </div>
-        <div className="Palette-form">
-          <p className="Palette-form--text">Name</p>
-          <div className="flex">
-            <input
-              className="Palette-form--input"
-              placeholder="Website color scheme"
-            />
-            {/* <input
+        <div className="Palette-footer">
+          <div className="Palette-palette">
+            <CompactPicker color={color} onChangeComplete={handleChange} />
+          </div>
+          <div className="Palette-form">
+            <p className="Palette-form--text">Name</p>
+            <div className="flex">
+              <input
+                className="Palette-form--input"
+                placeholder="Website color scheme"
+              />
+              {/* <input
                 type="submit"
                 className="Palette-form--submit"
                 onSubmit={(e) => addSaved(e)}
               /> */}
-            <button
-              className="Palette-form--button"
-              onClick={() => addToFavorites(favorites, circles)}
-            >
-              +
-            </button>
+              <button
+                className="Palette-form--button"
+                onClick={() => addToFavorites(circles)}
+              >
+                +
+              </button>
+            </div>
           </div>
         </div>
         {/* </form> */}

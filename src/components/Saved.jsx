@@ -6,31 +6,35 @@ import { circles } from "./data";
 const Saved = () => {
   const { favorites, removeFromFavorites } = useAppContext();
 
-  console.log("el circles desde el savedd", circles);
   console.log("el favorites desde el savedd", favorites);
 
   return (
     <div className="Saved">
       <h2 className="Saved-title">Saved palettes</h2>
       <div className="Saved-grid">
-        {favorites.map(({ id, circles }) => {
+        {favorites.map(({ id, circles, favs }) => {
           {
             /* console.log("dentro del map", circles[0].colour); */
           }
+
           return (
             <>
               <div className="Item">
                 <div className="Item-header">
                   <h3 className="Item-header--title">Ey</h3>
-
-                  <button className="Item-header--button">X</button>
+                  <button
+                    className="Item-header--button"
+                    onClick={() => removeFromFavorites(id)}
+                  >
+                    X
+                  </button>
                 </div>
                 <div className="Item-background">
                   <div
                     className="Item-circle"
-                    style={{ background: "red" }}
+                    style={{ background: circles[0].colour }}
                   ></div>
-                  {/* <div
+                  <div
                     className="Item-circle"
                     style={{ background: circles[1].colour }}
                   ></div>
@@ -45,7 +49,7 @@ const Saved = () => {
                   <div
                     className="Item-circle"
                     style={{ background: circles[4].colour }}
-                  ></div> */}
+                  ></div>
                 </div>
               </div>
             </>

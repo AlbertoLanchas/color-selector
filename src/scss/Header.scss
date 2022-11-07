@@ -1,12 +1,11 @@
 .Header {
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
   gap: 20px;
-
-  position: absolute;
-  width: 537px;
-  height: 54px;
-  left: 596px;
-  top: 34px;
+  padding: 2vh 0;
+  margin-bottom: 2vh;
 
   &-icon {
     font-family: "Poppins";
