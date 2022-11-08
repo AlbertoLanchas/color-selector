@@ -7,9 +7,6 @@ import { circles } from "./data";
 const Saved = () => {
   const { favorites, removeFromFavorites, nameInput } = useAppContext();
 
-  console.log("el favorites desde el savedd", favorites);
-  console.log("el name input", nameInput);
-
   return (
     <div className="Saved">
       <h2 className="Saved-title">Saved palettes</h2>

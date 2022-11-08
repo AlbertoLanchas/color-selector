@@ -33,7 +33,6 @@ const Palette = () => {
 
   useEffect(() => {
     addColor(clicked);
-    console.log("el favorites desde el palette use effect", favorites);
   }, [hex, circles, favorites]);
 
   return (
