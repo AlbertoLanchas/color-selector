@@ -13,7 +13,7 @@ const Palette = () => {
   const { hex } = color;
   const handleChange = (color) => setColor(color);
 
-  const { favorites, addToFavorites } = useAppContext();
+  const { favorites, addToFavorites, setNameInput, getName } = useAppContext();
 
   const addColor = (id) => {
     if (hex) {
@@ -28,6 +28,7 @@ const Palette = () => {
 
   const addSaved = (e) => {
     e.preventDefault();
+    addToFavorites(circles);
   };
 
   useEffect(() => {
@@ -37,8 +38,7 @@ const Palette = () => {
 
   return (
     <>
-      <div className="Palette">
-        {/* <form id="palette"> */}
+      <form id="palette" onSubmit={(e) => addSaved(e)} className="Palette">
         <div className="Palette-circles">
           {circles.map(({ id, colour }) => {
             return (
@@ -63,23 +63,15 @@ const Palette = () => {
               <input
                 className="Palette-form--input"
                 placeholder="Website color scheme"
+                type="submot"
+                onChange={(e) => getName(e.target.value)}
+                required
               />
-              {/* <input
-                type="submit"
-                className="Palette-form--submit"
-                onSubmit={(e) => addSaved(e)}
-              /> */}
-              <button
-                className="Palette-form--button"
-                onClick={() => addToFavorites(circles)}
-              >
-                +
-              </button>
+              <button className="Palette-form--button">+</button>
             </div>
           </div>
         </div>
-        {/* </form> */}
-      </div>
+      </form>
     </>
   );
 };

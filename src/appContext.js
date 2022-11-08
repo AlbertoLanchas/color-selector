@@ -14,6 +14,11 @@ export const useAppContext = () => {
 
 const AppContextProvider = ({ children }) => {
   const [favorites, setFavorites] = useState([]);
+  const [nameInput, setNameInput] = useState("");
+
+  const getName = (nameInput) => {
+    setNameInput([...nameInput, nameInput]);
+  };
 
   const addToFavorites = (circles) => {
     setFavorites([...favorites, { id: new Date(), circles }]);
@@ -31,6 +36,9 @@ const AppContextProvider = ({ children }) => {
         favorites,
         addToFavorites,
         removeFromFavorites,
+        nameInput,
+        setNameInput,
+        getName,
       }}
     >
       {children}

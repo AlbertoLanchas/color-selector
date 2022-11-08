@@ -71,6 +71,7 @@
       margin-right: 1.5rem;
     }
     &--button {
+      cursor: pointer;
       background-color: white;
       color: #2c2c2c;
       width: 67px;
@@ -180,4 +181,10 @@ input[type="submit"] {
       gap: 25vw;
     }
   }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
