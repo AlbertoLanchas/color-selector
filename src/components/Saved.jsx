@@ -1,6 +1,7 @@
 import React from "react";
 import "../scss/Saved.scss";
 import { useAppContext } from "../appContext";
+import { BsFillTrashFill } from "react-icons/bs";
 import { circles } from "./data";
 
 const Saved = () => {
@@ -23,7 +24,7 @@ const Saved = () => {
                     className="Item-header--button"
                     onClick={() => removeFromFavorites(id)}
                   >
-                    X
+                    <BsFillTrashFill />
                   </button>
                 </div>
                 <div className="Item-background">
